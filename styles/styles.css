@@ -253,7 +253,14 @@ letter-spacing: 0.02em;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+
+  transition: 250ms var(--transition-cubic);
 }
+
+.backdrop.is-hidden .modal-wrapper {
+  transform: translate(-50%, -50%) scale(0.1);
+}
+
 
 .modal-wrapper {
   position: absolute;
@@ -266,6 +273,8 @@ letter-spacing: 0.02em;
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
+  transform: translate(-50%, -50%) scale(1);
+  transition: 250ms var(--transition-cubic);
 }
 
 .modal-btn {
@@ -282,6 +291,7 @@ letter-spacing: 0.02em;
   padding: 0;
   background-color: var(--bg-color);
   cursor: pointer;
+  transition: 250ms var(--transition-cubic);
 }
 
 .icon-modal-button {
@@ -583,7 +593,7 @@ margin-right: 0;
 
 .client-icon {
   fill: var(--icon-color);
-  transition: var(--transition-cubic);
+  transition: var(--transition-cubic );
 }
 .client a:focus .client-icon,
 .client a:hover .client-icon {
@@ -727,7 +737,8 @@ margin-right: 0;
   padding: 63px 24px;
 }
 
-.cards.list li:hover .overlay-paragraph {
+.cards.list li:hover .overlay-paragraph,
+.cards.list li:focus .overlay-paragraph {
   transform: translateY(0);
 }
 
